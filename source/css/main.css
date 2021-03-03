@@ -1,0 +1,229 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --normal: 400;
+  --bold: 700;
+  --cyan: hsl(179, 61%, 44%);
+  --light-cyan: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  font-weight: var(--normal);
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+  line-height: 1.5;
+  color: var(--grayish-blue);
+}
+
+.card-wrapper {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 95vh;
+}
+
+.card {
+  width: 37rem;
+  height: 26rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "description description"
+    "subscription reason";
+}
+
+.descriptions {
+  grid-area: description;
+  padding: 2.3rem;
+}
+
+.header {
+  color: hsl(180, 43%, 45%);
+  font-size: 1.3rem;
+  margin-bottom: 0.725rem;
+}
+
+.time {
+  color: var(--bright-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.9045354rem;
+}
+
+.subscription,
+.reason {
+  color: #fff;
+}
+
+.subscription {
+  grid-area: subscription;
+  background-color: var(--cyan);
+  border-bottom-left-radius: 0.5rem;
+  padding: 2.3rem;
+}
+
+.monthly {
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  margin-bottom: 0.3445rem;
+  font-size: 2rem;
+  font-weight: var(--bold);
+  line-height: 2rem;
+}
+
+.periode {
+  font-size: 0.8432rem;
+  color: var(--light-gray);
+  font-weight: var(--normal);
+  margin-left: 0.34767rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.subscription .description {
+  margin-top: 0.5rem;
+}
+
+.button {
+  width: 100%;
+  height: 2.65rem;
+  font-weight: var(--bold);
+  margin-top: 1.5rem;
+  color: #fff;
+  background-color: var(--bright-yellow);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reason {
+  grid-area: reason;
+  background-color: var(--light-cyan);
+  border-bottom-right-radius: 0.5rem;
+  padding: 2.3rem;
+}
+
+.why {
+  margin-bottom: 0.8rem;
+}
+
+.reason .description {
+  font-size: 0.8rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cyan);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--bright-yellow);
+}
+
+.attribution a:hover {
+  color: var(--cyan);
+}
+
+@media (max-width: 650px) {
+  .card-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .card {
+    max-width: 28rem;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "description"
+      "subscription"
+      "reason";
+  }
+
+  .subscription {
+    border-bottom-left-radius: 0;
+  }
+
+  .reason {
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .card {
+    max-width: 25rem;
+    height: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  .card {
+    max-width: 22rem;
+  }
+
+  footer {
+    position: relative;
+    bottom: -10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body,
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1.7rem;
+  }
+
+  .periode {
+    font-size: 0.7rem;
+  }
+
+  .card {
+    max-width: 20rem;
+  }
+}
