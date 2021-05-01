@@ -19,23 +19,29 @@
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: var(--light-gray);
   font-family: "Karla", sans-serif;
   font-size: 1rem;
   font-weight: var(--normal);
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   overflow: visible;
   line-height: 1.5;
   color: var(--grayish-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-wrapper {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  height: 95vh;
+  margin: auto;
+  height: 100%;
 }
 
 .card {
@@ -137,18 +143,17 @@ body {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  text-align: center;
   color: var(--cyan);
 }
 
-.attribution a {
+footer a {
   text-decoration: none;
   color: var(--bright-yellow);
 }
 
-.attribution a:hover {
+footer a:hover {
   color: var(--cyan);
 }
 
